@@ -30,7 +30,7 @@ except FileNotFoundError:
 
 
 # --- User Interface ---
-st.title("💸 เครื่องมือประเมินความเสี่ยงสินเชื่อ (NPL)")
+st.title("💸เครื่องมือประเมินความเสี่ยงสินเชื่อ(NPL)")
 st.write("กรอกข้อมูลเพื่อประเมินความเสี่ยงของสมาชิกที่ขอสินเชื่อใหม่ โดยระบบจะแบ่งระดับความเสี่ยงเป็น 4 ระดับ")
 
 # Create a form for a cleaner layout and single submission button.
@@ -53,7 +53,7 @@ with st.form("input_form"):
         loan_amount = st.number_input("วงเงินที่ขอ", min_value=0, value=50000, step=5000)
         # --- EDITED: Changed DTI input to Monthly Payment input ---
         # Instead of asking for the ratio, we ask for the monthly payment to calculate it.
-        monthly_payment = st.number_input("ชำระต่องวด (บาทต่อเดือน)", min_value=0, value=5000, step=500)
+        monthly_payment = st.number_input("ชำระต่องวด (บาทต่อเดือน)", min_value=0, value=2000, step=500)
 
 
     # The submission button for the form.
@@ -104,4 +104,4 @@ if submitted:
 
     # Display a progress bar to visually represent the NPL probability.
     st.progress(npl_probability)
-    st.caption("แถบด้านบนแสดงความน่าจะเป็นที่ลูกค้ารายนี้จะกลายเป็นหนี้เสีย (NPL)")
+    st.caption("แถบด้านบนแสดงความน่าจะเป็นที่ลูกค้ารายนี้จะกลายเป็นหนี้เสีย (NPL)")#.\venv\Scripts\activate#streamlit run app.py
